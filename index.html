@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="upload">
+        <label for="img_upload">Handle Images</label>
+        <input type="file" name="" id="img_upload" accept="image/*" />
+        <div class="box">
+          <img id="img" alt="" />
+        </div>
+      </div>
+
+      <div class="upload">
+        <label for="video_upload">Handle Videos</label>
+        <input type="file" name="" id="video_upload" accept="video/*" />
+        <div class="box">
+          <video autoplay controls id="video" src=""></video>
+        </div>
+      </div>
+
+      <div class="upload">
+        <label for="audio_upload">Handle Audios</label>
+        <input type="file" name="" id="audio_upload" accept="audio/*" />
+        <div class="box">
+          <audio id="audio" controls accept="audio/*">
+            <source src="" />
+          </audio>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
