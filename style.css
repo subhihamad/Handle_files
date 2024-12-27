@@ -77,14 +77,14 @@ audio {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: crimson;
+  background-color: #eb5e28;
 }
 .mic-toogle::before,
 .mic-toogle::after {
   content: "";
   position: absolute;
   z-index: 0;
-  background-color: rgba(220, 20, 60, 0.2);
+  background-color: rgba(194, 103, 43, 0.2);
   top: var(--pad);
   left: var(--pad);
   bottom: var(--pad);
