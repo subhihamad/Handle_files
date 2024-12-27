@@ -1,7 +1,10 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --pad: 0rem;
 }
 body {
   background-color: #4b4747;
@@ -28,15 +31,15 @@ body {
   border-radius: 8px;
   cursor: pointer;
   color: #fff;
-  font-family:monospace;
-  font-weight:bold;
+  font-family: monospace;
+  font-weight: bold;
 }
 input[type="file"] {
   display: none;
 }
 img {
   max-width: 300px;
-  max-height: 400px;
+  max-height: 500px;
   display: none;
   position: absolute;
   left: 0;
@@ -48,12 +51,98 @@ video {
   height: 400px;
   display: none;
   position: absolute;
-  left: -100%;
+  left: -85%;
   top: 60px;
 }
 audio {
   display: none;
   position: absolute;
-  left: -100%;
+  left: -60%;
   top: 100px;
+}
+/*mic recorder*/
+.mic-record {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+.mic-toogle {
+  appearance: none;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: crimson;
+}
+.mic-toogle::before,
+.mic-toogle::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background-color: rgba(220, 20, 60, 0.2);
+  top: var(--pad);
+  left: var(--pad);
+  bottom: var(--pad);
+  right: var(--pad);
+  border-radius: 50%;
+}
+.mic-toogle::before {
+  transition: 0.2s;
+}
+.mic-toogle::after {
+  transition: 0.4s;
+}
+.mic-toogle:hover::before {
+  --pad: -1 rem;
+}
+.mic-toogle:hover::after {
+  --pad: -2rem;
+}
+
+.mic-toogle.is-recording::before {
+  animation: smoothPadBefore 0.6s ease-in-out infinite alternate-reverse
+    forwards;
+}
+.mic-toogle.is-recording::after {
+  animation: smoothPadAfter 0.6s ease-in-out infinite alternate-reverse forwards;
+}
+@keyframes smoothPadBefore {
+  0% {
+    top: -1rem;
+    left: -1rem;
+    bottom: -1rem;
+    right: -1rem;
+  }
+  100% {
+    top: -0.5rem;
+    left: -0.5rem;
+    bottom: -0.5rem;
+    right: -0.5rem;
+  }
+}
+@keyframes smoothPadAfter {
+  0% {
+    top: -2rem;
+    left: -2rem;
+    bottom: -2rem;
+    right: -2rem;
+  }
+  100% {
+    top: -1rem;
+    left: -1rem;
+    bottom: -1rem;
+    right: -1rem;
+  }
+}
+.playback {
+  box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  position: absolute;
+  left: 100px;
+  top: 10px;
 }
